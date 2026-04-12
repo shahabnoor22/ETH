@@ -31,6 +31,14 @@ seeds:
 models:
   eth:
     +materialized: view
-    # Config indicated by + and applies to all files under models/example/
-    #example:
-    #  +materialized: view
+    +tags: ['eth', 'crypto']
+    marts:
+      +tags:
+        - powerbi
+        - report
+      +schema: marts
+      # stablecoin_activity_per_day:
+      #   +post-hook:
+      #     - GRANT USAGE ON DATABASE DBT TO ROLE TESTER;
+      #     - GRANT USAGE ON SCHEMA DBT.DBT_SHAUPL TO ROLE TESTER;
+
